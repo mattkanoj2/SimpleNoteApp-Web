@@ -1,0 +1,5 @@
+theme: jekyll-theme-minimal
+title: SimpleNoteApp
+description: シンプルで使いやすいメモアプリケーション
+show_downloads: true
+google_analytics:

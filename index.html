@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SimpleNoteApp</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z' fill='%233a86ff'/><polyline points='14 2 14 8 20 8' fill='none' stroke='%233a86ff' stroke-width='2'/><line x1='16' y1='13' x2='8' y2='13' stroke='%233a86ff' stroke-width='2'/><line x1='16' y1='17' x2='8' y2='17' stroke='%233a86ff' stroke-width='2'/><polyline points='10 9 9 9 8 9' stroke='%233a86ff' stroke-width='2'/></svg>">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>SimpleNoteApp</h1>
+            <div class="theme-toggle">
+                <button id="theme-toggle-btn" title="テーマ切り替え">🌙</button>
+            </div>
+        </header>
+        
+        <div class="note-controls">
+            <input type="text" id="search-input" placeholder="メモを検索...">
+            <select id="category-select" aria-label="カテゴリでフィルタ">
+                <option value="all">すべてのカテゴリ</option>
+                <option value="work">仕事</option>
+                <option value="personal">個人</option>
+                <option value="ideas">アイデア</option>
+                <option value="other">その他</option>
+            </select>
+            <button id="add-note-btn" title="新規メモを作成">新規メモ</button>
+        </div>
+
+        <div class="note-container">
+            <div id="note-list">
+                <p class="empty-note">メモがありません</p>
+            </div>
+            
+            <div id="note-editor" class="hidden">
+                <div class="editor-header">
+                    <input type="text" id="note-title" placeholder="タイトル" aria-label="メモのタイトル">
+                    <select id="note-category" aria-label="メモのカテゴリ">
+                        <option value="work">仕事</option>
+                        <option value="personal">個人</option>
+                        <option value="ideas">アイデア</option>
+                        <option value="other">その他</option>
+                    </select>
+                    <button id="pin-note-btn" title="メモをピン留め">📌</button>
+                </div>
+                <textarea id="note-content" placeholder="ここにメモを入力..." aria-label="メモの内容"></textarea>
+                <div class="editor-footer">
+                    <button id="save-note-btn" title="メモを保存">保存</button>
+                    <button id="cancel-btn" title="キャンセル">キャンセル</button>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <div class="export-import">
+                <button id="export-btn" title="メモをエクスポート">エクスポート</button>
+                <button id="import-btn" title="メモをインポート">インポート</button>
+                <input type="file" id="import-file" accept=".json" style="display: none;">
+            </div>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
